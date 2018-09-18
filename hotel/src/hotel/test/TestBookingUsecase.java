@@ -22,10 +22,19 @@ public class TestBookingUsecase {
         Testing_phoneNumberEntered_Method();
 
     }
-
+/*
     private static void Testing_phoneNumberEntered_Method() {
         hotel=new Hotel();
         IOUtils.outputln("\nBooking Room\n");
 	new BookingCTL(hotel).run();
+    }
+   */
+    
+    private static void Testing_phoneNumberEntered_Method() {
+        hotel=new Hotel();
+        IOUtils.outputln("\nBooking Room\n");
+        int phoneNumber=1841;
+	new BookingCTL(hotel).phoneNumberEntered(1841);
+        
     }
 }
