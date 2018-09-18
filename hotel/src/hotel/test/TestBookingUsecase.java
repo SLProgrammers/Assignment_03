@@ -20,7 +20,7 @@ public class TestBookingUsecase {
 
     public static void main(String[] args) {
 
-        Testing_phoneNumberEntered_Method();
+       Testing_bookingTimesEntered_Method();
 
     }
 /*
@@ -52,4 +52,10 @@ public class TestBookingUsecase {
         
     }
     
+    private static void Testing_bookingTimesEntered_Method() {
+        hotel=new Hotel();
+        IOUtils.outputln("\nBooking Room\n");
+	new BookingCTL(hotel).run();
+        
+    }
 }
