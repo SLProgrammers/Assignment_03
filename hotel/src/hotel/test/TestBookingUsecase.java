@@ -7,6 +7,7 @@ package hotel.test;
 
 import hotel.booking.BookingCTL;
 import hotel.entities.Hotel;
+import hotel.entities.RoomType;
 import hotel.utils.IOUtils;
 
 /**
@@ -41,8 +42,14 @@ public class TestBookingUsecase {
     private static void Testing_guestDetailsEntered_Method() {
         hotel=new Hotel();
         IOUtils.outputln("\nBooking Room\n");
-        int phoneNumber=1841;
 	new BookingCTL(hotel).guestDetailsEntered("KOsala", "Glen Waverley");
         
     }
+    private static void Testing_roomTypeAndOccupantsEntered_Method() {
+        hotel=new Hotel();
+        IOUtils.outputln("\nBooking Room\n");
+	new BookingCTL(hotel).roomTypeAndOccupantsEntered(RoomType.DOUBLE, 1);
+        
+    }
+    
 }
