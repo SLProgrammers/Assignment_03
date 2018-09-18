@@ -37,4 +37,12 @@ public class TestBookingUsecase {
 	new BookingCTL(hotel).phoneNumberEntered(1841);
         
     }
+    
+    private static void Testing_guestDetailsEntered_Method() {
+        hotel=new Hotel();
+        IOUtils.outputln("\nBooking Room\n");
+        int phoneNumber=1841;
+	new BookingCTL(hotel).guestDetailsEntered("KOsala", "Glen Waverley");
+        
+    }
 }
