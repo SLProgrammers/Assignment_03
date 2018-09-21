@@ -46,10 +46,12 @@ public class IOUtils {
 
 
 	public static String nextln() {
-		if (stdin == null) {
+        
+            if (stdin == null) {
 		    stdin = new Scanner(System.in);
 		}
 		String ans = stdin.nextLine();
+                System.out.println("Entered int ="+ans);
 		return ans.trim();
 	}
 	
@@ -77,7 +79,7 @@ public class IOUtils {
 	
 	
 	public static Date getValidDate(String prompt) {		
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 		Date date = null;
 
 		IOUtils.outputln(prompt);		
