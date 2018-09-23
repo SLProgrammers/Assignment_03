@@ -81,6 +81,22 @@ public class CheckinCTL {
 	
 	public void checkInConfirmed(boolean confirmed) {
 		// TODO Auto-generated method stub
+
+		//22/09/2018 
+
+		if (state != State.CHECKING) {
+            String mesg = String.format("CheckInCTL: confirmationNumberEntered : bad state : %s", state);
+            throw new RuntimeException(mesg);
+        }
+          if(confirmed){
+          hotel.checkin(confirmationNumber);
+          checkInUI.displayMessage("Checking in cancelled");
+          state = State.COMPLETED;
+          checkInUI.setState(CheckinUI.State.COMPLETED);
+          }
+          else{
+           this.cancel();
+          }
 	}
 
 
