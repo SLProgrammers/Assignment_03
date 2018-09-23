@@ -82,7 +82,7 @@ public class CheckinCTL {
 	public void checkInConfirmed(boolean confirmed) {
 		// TODO Auto-generated method stub
 
-		//22/09/2018 
+		//22/09/2018 check the confirmation of the number of the entered and implemented
 
 		if (state != State.CHECKING) {
             String mesg = String.format("CheckInCTL: confirmationNumberEntered : bad state : %s", state);
