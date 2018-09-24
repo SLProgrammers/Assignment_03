@@ -32,22 +32,25 @@ public class HotelHelper {
 		hotel.addRoom(RoomType.DOUBLE, 201);
 		hotel.addRoom(RoomType.TWIN_SHARE, 301);
 		
+                
 		Guest guest = new Guest("Fred", "Nurke", 2);
 		CreditCard card = new CreditCard(CreditCardType.VISA, 2, 2);
-		
+		/*
 		Room room = hotel.findAvailableRoom(RoomType.TWIN_SHARE, date, 1);
 		long confNo = hotel.book(room, guest, date, 1, 2, card);
 		Booking booking = hotel.findBookingByConfirmationNumber(confNo);
 		hotel.checkin(confNo);
 		booking.addServiceCharge(ServiceType.ROOM_SERVICE, 7.00);
 		
+                
 		IOUtils.trace("HotelHelper");
 		for (RoomType rt : RoomType.values()) {
 			Map<Integer, Room> rooms = hotel.roomsByType.get(rt);
 			for (Integer id : rooms.keySet()) {
 				IOUtils.outputln(rooms.get(id));
 			}
-		}		
+		}
+*/
 		return hotel;
 	}
 
