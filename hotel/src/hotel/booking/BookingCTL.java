@@ -7,6 +7,7 @@ import java.util.Date;
 import hotel.credit.CreditAuthorizer;
 import hotel.credit.CreditCard;
 import hotel.credit.CreditCardType;
+import hotel.credit.ICreditAuthorizer;
 import hotel.entities.Guest;
 import hotel.entities.Hotel;
 import hotel.entities.Room;
@@ -139,7 +140,11 @@ public class BookingCTL {
 
 	public void creditDetailsEntered(CreditCardType type, int number, int ccv) {
 		creditCard=new CreditCard(type, number, ccv);
-                if(CreditAuthorizer.getInstance().authorize(creditCard, cost))
+                System.out.println("Card number : " +number); 
+                CreditAuthorizer aus=CreditAuthorizer.getInstance();
+                 
+                
+                if(aus.authorize(creditCard, cost))
                 {
                     hotel.book(room, guest, arrivalDate, stayLength, occupantNumber, creditCard);
                     bookingUI.displayConfirmedBooking(room.getDescription(),number, arrivalDate, stayLength, guest.getName(), creditCard.getVendor(), number, cost, occupantNumber);

@@ -15,7 +15,9 @@ public class CreditAuthorizer implements ICreditAuthorizer {
 
 	@Override
 	public boolean authorize(ICreditCard card, double amount) {
-		if (card.getNumber() <= 5) {
+	
+            System.out.println("Card number :" +card.getNumber());
+            if (card.getNumber() <= 5) {
 			return true;
 		}
 		return false;

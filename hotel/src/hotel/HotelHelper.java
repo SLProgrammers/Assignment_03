@@ -42,7 +42,9 @@ public class HotelHelper {
 		Booking booking = hotel.findBookingByConfirmationNumber(confNo);
 		hotel.checkin(confNo);
 		
-                //booking.addServiceCharge(ServiceType.ROOM_SERVICE, 7.00);
+                System.out.println("Confamation ID : "+confNo);
+                
+                booking.addServiceCharge(ServiceType.ROOM_SERVICE, 7.00);
 		
                 
                 /*
