@@ -9,8 +9,6 @@ import hotel.utils.IOUtils;
 
 public class Hotel {
 
-
-
     private Map<Integer, Guest> guests;
     public Map<RoomType, Map<Integer, Room>> roomsByType;
     public Map<Long, Booking> bookingsByConfirmationNumber;
