@@ -25,9 +25,10 @@ public class Booking {
 	
 	private State state;
 
+        ServiceCharge serviceCharge;
 
 	
-	public Booking(Guest guest, Room room, 
+	 public Booking(Guest guest, Room room, 
 			Date arrivalDate, int stayLength, 
 			int numberOfOccupants, 
 			CreditCard creditCard) {
@@ -138,7 +139,8 @@ public class Booking {
 
 
 	public void addServiceCharge(ServiceType serviceType, double cost) {
-		// TODO Auto-generated method stub
+		serviceCharge=new ServiceCharge(serviceType, cost);
+                charges.add(serviceCharge);
 	}
 
 

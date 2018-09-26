@@ -31,6 +31,7 @@ public class BookingCTL {
 	private int occupantNumber;
 	private Date arrivalDate;
 	private int stayLength;
+        CreditCard creditCard;
 
 	
 	public BookingCTL(Hotel hotel) {
@@ -137,8 +138,19 @@ public class BookingCTL {
 
 
 	public void creditDetailsEntered(CreditCardType type, int number, int ccv) {
-		// TODO Auto-generated method stub
-	}
+		creditCard=new CreditCard(type, number, ccv);
+                if(CreditAuthorizer.getInstance().authorize(creditCard, cost))
+                {
+                    hotel.book(room, guest, arrivalDate, stayLength, occupantNumber, creditCard);
+                    bookingUI.displayConfirmedBooking(room.getDescription(),number, arrivalDate, stayLength, guest.getName(), creditCard.getVendor(), number, cost, occupantNumber);
+                    state=State.COMPLETED;
+                    bookingUI.setState(BookingUI.State.COMPLETED);
+                }
+                else
+                {
+                    bookingUI.displayMessage("Creadit not authorised");
+                }
+        }
 
 
 	public void cancel() {
