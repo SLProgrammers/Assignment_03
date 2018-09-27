@@ -44,7 +44,7 @@ public class HotelHelper {
 		
                 System.out.println("Confamation ID : "+confNo);
                 
-                booking.addServiceCharge(ServiceType.ROOM_SERVICE, 7.00);
+                //booking.addServiceCharge(ServiceType.ROOM_SERVICE, 7.00);
 		
                 
                 /*
